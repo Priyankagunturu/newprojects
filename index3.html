@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!--<meta http-equiv="refresh" content="30">--> 
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title> jascript webpages</title>
+        <style>
+            body{
+                display:flex;
+                flex-direction:column;
+                /* align-content:space-between; */
+                justify-content:center;
+                height:100vh;
+                align-items:center;
+                row-gap: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btnamount">+</button>
+        <input id="inputAmount" type="text">
+        <input id="textDesc1" type="text">
+        <p id="heading"></p> <!-- write paragragh or heading tag as <h1 id="heading"><h1> -->
+        <script>
+            // get the button from html to js
+            let amount =document.querySelector("#btnamount");
+            let addTotalExpense=0;
+
+            //adding the heading element here or any html body element because to get the output in the webpage itself instead of in console.
+            let headingTotal = document.querySelector("#heading");
+            headingTotal.textContent=addTotalExpense;
+
+            let textDescE1=document.querySelector("#textDesc1");
+            //to read the value get value from the element(i.e from docuemnt)
+            // get input value from html tag
+
+            let element= document.querySelector("#inputAmount");
+
+           const expenseItem=[];
+            
+            // write the function for input 
+            function totalExpense(){
+                const allExpenses={};
+                
+
+                let expense =element.value;
+
+                console.log({expense});
+
+                let textDesc11=textDescE1.value;
+                console.log({textDesc11});
+                allExpenses.text=textDesc11;
+                
+                // conevrt input value to inter and store in one variable.
+                let inputExpense=parseInt(expense,10);
+                
+                console.log({inputExpense});
+                //assigning value (input expense ) to the object(allExpenses)with property as amountprice
+                allExpenses.amountprice=inputExpense;
+
+
+
+                //add the input value to the initial value on button click
+                addTotalExpense=addTotalExpense+inputExpense;
+
+                //again writing here to get the addtotalexpense  value in the webpage
+                headingTotal.textContent=addTotalExpense;
+
+                //console.log()
+                console.log({addTotalExpense});
+
+                expenseItem.push(allExpenses);
+
+                //writing clear because if we add items again and again it will show in one table instead of several times.
+                console.clear();
+                console.table(expenseItem)
+
+            }
+                    
+
+            // addevent listener to button click with function as declared.
+            amount.addEventListener("click",totalExpense,false);
+
+        </script>
+    </body>
+</html>

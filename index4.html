@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <title>array javascript</title>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            height:100vh;
+            align-items:center;
+            row-gap:10px;
+           
+
+        }
+    </style>
+    <body>
+        <button id="btncount">%</button>
+        <input id="inputAmount">
+        <input id="textinput">
+        <h1 id="totalPrice"></h1>        
+        <script>
+             let button=document.querySelector("#btncount");
+             let inpAmount=document.querySelector("#inputAmount");
+            
+             let totalExpenses=0;
+             let arrName=[];
+             function counterIncrement(){
+                
+                 let inpAmount=document.querySelector("#inputAmount");
+                 let amountInp=inpAmount.value;
+                 let totalInpAmount=parseInt(amountInp,10);
+                 console.log({totalInpAmount});
+
+                 totalExpenses=totalExpenses+totalInpAmount;
+                 console.log({totalExpenses});
+
+                 let inpText=document.querySelector("#textinput");
+                 let inputtext=inpText.value;
+                 console.log({inputtext});
+                 
+                 let totalPrices=document.querySelector("#totalPrice");
+                 //below line or totalPrices.textContent=totalExpenses;
+                 totalPrices.textContent="Total expense till now  "+ totalExpenses;
+                 
+
+                let totalObj={};
+                totalObj.textDesc=inputtext;
+                totalObj.amount=totalInpAmount;
+               
+                arrName.push(totalObj);
+                console.clear();
+                console.table(arrName);
+             }
+             button.addEventListener("click",counterIncrement,false);
+
+            
+        </script>
+
+    </body>
+    
+</html>

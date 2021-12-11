@@ -1,19 +1,43 @@
-<html>
-    <head>
-        <title>new project</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="demo.css" rel="stylesheet">
-       
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript based website</title>
+    <style>
+        body{
+            color:blue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+        }
+
+    </style>
+   
+</head>
+<body>
+    <button id='btncount'>-</button>
+    <script>
         
-    <body class="trump-hall">
-        <img class="rose-img" src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?cs=srgb&dl=pexels-pixabay-56866.jpg&fm=jpg">  
-        <div class="orange">
-            <h1>hello biggboss</h1>
-            <p>This is our first web design program</p>
-            <h3>Your paragragh ends here</h3>
-            <p>hello priyanka <a href="https://www.bing.com/search?q=byjus&cvid=84f991b3fb3e4162851f971b60f6195a&aqs=edge.1.69i57j0l8.3178j0j1&pglt=2083&FORM=ANNTA1&PC=U531">THIS</a></P>
-                
-        </div> 
-    </body>
+        const element = document.querySelector('#btncount');
+        element.addEventListener('click',counterIncrement,false);
+       
+        let counter=0;
+        //console.log(counter);
+        
+        function counterIncrement(){
+            counter=counter + 1;
+            console.log(counter);
+        }
+        //counterIncrement();---If we call the function or doesn't call it works beacuse it takes from addevent listener.
+        
+    </script>
+
+
+    
+    
+</body>
 </html>

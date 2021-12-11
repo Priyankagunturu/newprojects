@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript based website</title>
+    <style>
+        body{
+            color:blue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+        }
+
+    </style>
+   
+</head>
+<body>
+    
+    <button id='btncount'>-</button>
+<!-- taking input from user adding when we press the button -->
+    <input id='expense' type="text"></input>
+    <script>
+        //initially declaring the variable for totalExpenses
+         let totalExpenses=0; 
+         //declaring functions because to add the event for doing the click event
+        function addTotalExpenses(){
+            //writing inside function because to add the input data for the totalexpenses
+            const element = document.querySelector('#expense');
+            //after getting the value from document to element variable taking that value to textAmount
+            const textAmount=element.value;
+            //first printing the input value which was entered manually.
+            console.log({textAmount});
+            //parseInt is used to convert string to interger with base 10
+            const laptop=parseInt(textAmount,10);
+
+            console.log({laptop});  
+            //When you enter the input value and click the button it adds to the current value of totalexpenses 
+            totalExpenses = totalExpenses + laptop;
+            console.log({totalExpenses});  
+        }
+        //to click the button and get operation from that we are taking this id attribute
+        const elements = document.querySelector('#btncount');
+        //we take element. because we need the operation when button is pressed. 
+        elements.addEventListener('click',addTotalExpenses,false);
+    </script>
+
+
+    
+    
+</body>
+</html>
